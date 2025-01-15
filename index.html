@@ -32,22 +32,25 @@
     </div>
   </div>
 
-  <div class="formulary-organizer">
-    <form action="" method="GET" class="formulary-for-ticket">
-
+  <form action="" class="formulary-for-ticket"> <!-- Method="GET" -->
+    <div class="formulary-organizer">
       <div class="upload-avatar inputs-configs-design">
         <label for="upload-input">
           <span>Upload Avatar</span>
-          <div class="uploading-file">
-            <div class="img-to-upload">
+          <div class="upload-area">
+            <div class="svg-upload">
               <img src="assets/images/icon-upload.svg" alt="Upload logo">
             </div>
-            <div class="subtitle-upload-div">
-              <p class="subtitle-upload">Drag and drop or click to upload</p>
+            <div class="subtitle-upload-area">
+              <p class="subtitle-upload-content">Drag and drop or click to upload</p>
             </div>
           </div>
           <input type="file" name="upload-input" id="upload-input" hidden>
         </label>
+        <p class="type-files">
+          <img src="assets/images/icon-info.svg" alt="Info image">
+          Upload your photo (JPG or PNG, max size: 500KB)
+        </p>
       </div>
 
       <div class="input-for-name inputs-configs-design">
@@ -60,29 +63,33 @@
       <div class="input-for-email inputs-configs-design">
         <label for="email-input">
           <span>Email Adress</span>
-          <input type="email" name="email-input" id="email-input" class="inputs-design">
+          <input type="email" name="email-input" id="email-input" class="inputs-design" placeholder="example@email.com">
         </label>
       </div>
 
       <div class="input-for-github inputs-configs-design">
         <label for="github-input">
           <span>GitHub Username</span>
-          <input type="text" name="github-input" id="github-input" class="inputs-design">
+          <input type="text" name="github-input" id="github-input" class="inputs-design" placeholder="@yourusername">
         </label>
       </div>
 
-      <div class="input-submit" >
+      <div class="input-submit">
         <input type="submit" value="Generate My Ticket" class="inputs-configs-design input-submit-btn">
       </div>
-    </form>
+    </div>
+  </form>
 
+
+
+  <div class="attribution">
+    <span>
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+    </span>
+    <span>
+      Coded by <a href="https://github.com/DoCarmo2008">Gabriel do Carmo Batista</a>.
+    </span>
   </div>
-
-  <!-- WORK ON THIS IN THE END OF THE PROJECT -->
-  <!-- <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
-    Coded by <a href="#">Your Name Here</a>.
-  </div> -->
 
   <script src="scripts/script.js"></script>
 </body>

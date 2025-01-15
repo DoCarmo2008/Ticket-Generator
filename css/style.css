@@ -7,7 +7,6 @@
 
 :root {
     /* COLORS */
-    
     /* Neutrals type colors */
     --neutral0: hsl(0, 0%, 100%);
     --neutral300: hsl(252, 6%, 83%);
@@ -40,8 +39,8 @@ body {
     background-size:cover;
     background-position: center;
     height: 100vh;
-    font-family: var(--Inconsolata);
     overflow: hidden;
+    font-family: var(--Inconsolata);
     color: var(--neutral0);
 }
 
@@ -81,20 +80,20 @@ body {
 /* Text Content */
 
 .title-head {
-    margin-top: 40px;
+    margin-top: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     text-align: center;
-    gap: 20px;
+    gap: 10px;
 }
 
 .title-content {
     text-align: center;
     white-space: nowrap;
     width: 50%;
-    font-size:1.4rem;
+    font-size:1.2rem;
 }
 
 .subtitle-content {
@@ -103,20 +102,23 @@ body {
 
 /* FORMULARY */
 
-.formulary-organizer {
-    padding-top: 30px;
-}
-
 .formulary-for-ticket {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+} 
+
+.formulary-organizer {
+    display: flex;
+    flex-direction: column;
     gap: 10px;
-    padding: 20px;
+    padding-top: 25px;
 }
 
 /* INPUTS */
+
+/* GENERAL CONFIGS */
 .inputs-configs-design  {
     width: 30vw;
 }
@@ -127,7 +129,7 @@ body {
 }
 
 .inputs-configs-design label span {
-    font-size: 20px;
+    font-size: 15px;
     margin-bottom: 10px;
     font-family: var(--Inconsolata);
 }
@@ -138,28 +140,95 @@ body {
     border-radius: 10px;
     padding: 10px;
     width: 100%;
+    color: var(--neutral0);
+    cursor: pointer;
+}
+.inputs-design::placeholder {
+    color: var(--neutral300);
+    font-family: var(--Inconsolata);
 }
 
+.inputs-design:focus, .upload-area:focus{
+    outline: 2px solid var(--neutral500);
+    outline-offset: 2px;
+}
+
+/* UPLOAD */
+.upload-area {
+    background-color: rgba(255, 255, 255, 0.048);
+    border: 1.5px dashed var(--neutral500);  
+    border-radius: 10px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.svg-upload {
+    background-color:rgba(255, 255, 255, 0.11);
+    border: 1px solid var(--neutral700);
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: inherit;
+}
+
+.subtitle-upload-content {
+    color: var(--neutral500);
+}
+
+.type-files {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    color: var(--neutral500);
+    font-size: 10px;
+}
+
+.inputs-design:hover, .upload-area:hover {
+    background-color:rgba(255, 255, 255, 0.178);
+}
+
+
+
+/* SUBMIT */
 .input-submit-btn {
     background-color: var(--orange500);
     border: none;
     border-radius: 10px;
     padding: 10px;
     color: var(--neutral900);
-    font-size: 20px;
+    font-size: 15px;
     font-weight: bold;
     font-family: var(--Inconsolata);
+    margin-top: 10px;
+    cursor: pointer;
 }
+
+.input-submit-btn:hover{
+    box-shadow: 0em 4px 0em hsl(5, 86%, 73%);
+}
+
+
 
 
 
 
 /* Credits - END OF THE PROJECT */
-/* .attribution {
+.attribution {
+    display: flex;
+    justify-content: center;
+    margin-top: 2px;
     font-size: 11px;
     text-align: center;
+    gap: 10px;
 }
 
 .attribution a {
     color: hsl(228, 45%, 44%);
-} */
+}
