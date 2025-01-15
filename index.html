@@ -1,52 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta author="Gabriel do Carmo Batista">
   <meta description="Challenge from Frontend Mentor coded by Gabriel do Carmo Batista">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  <title>Gabriel do Carmo | Conference ticket generator | Frontend Mentor</title>
+  <title>Conference ticket generator | Gabriel do Carmo | Frontend Mentor</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
+  <header>
+    <div class="centralizer-logo">
+      <img src="assets/images/logo-full.svg" alt="Full Coding Conf logo">
+    </div>
+  </header>
 
-  <!-- Form starts -->
+  <img class="pattern-lines" src="assets/images/pattern-lines.svg" alt="Lines in the background">
+  <img class="pattern-squiggly-top" src="assets/images/pattern-squiggly-line-top.svg" alt="Squiggly line in the top">
+  <img class="pattern-squiggly-bottom" src="assets/images/pattern-squiggly-line-bottom.svg"
+    alt="Squiggly line in the bottom">
 
-  Your Journey to Coding Conf 2025 Starts Here!
-
-  Secure your spot at next year's biggest coding conference.
-
-  Upload Avatar
-  Drag and drop or click to upload
-  Upload your photo (JPG or PNG, max size: 500KB).
-
-  Full Name
-
-  Email Address
-  example@email.com
-
-  GitHub Username
-  @yourusername
-
-  Generate My Ticket
-
-  <!-- Form ends -->
-
-  <!-- Generated tickets starts -->
-
-  Congrats, <!-- Full Name -->! Your ticket is ready.
-
-  We've emailed your ticket to <!-- Email Address --> and will send updates in the run up to the event.
-
-  Coding Conf
-  Jan 31, 2025 / Austin, TX
-
-  <!-- Generated tickets ends -->
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+  <div class="title-head">
+    <div class="title-content">
+      <h1 class="main-title">Your Journey to Coding Conf <br> 2025 Starts Here!</h1>
+    </div>
+    <div class="subtitle-content">
+      <p class="main-paragraph">Secure your spot at next year's biggest coding conference.</p>
+    </div>
   </div>
+
+  <div class="formulary-organizer">
+    <form action="" method="GET" class="formulary-for-ticket">
+
+      <div class="upload-avatar inputs-configs-design">
+        <label for="upload-input">
+          <span>Upload Avatar</span>
+          <div class="uploading-file">
+            <div class="img-to-upload">
+              <img src="assets/images/icon-upload.svg" alt="Upload logo">
+            </div>
+            <div class="subtitle-upload-div">
+              <p class="subtitle-upload">Drag and drop or click to upload</p>
+            </div>
+          </div>
+          <input type="file" name="upload-input" id="upload-input" hidden>
+        </label>
+      </div>
+
+      <div class="input-for-name inputs-configs-design">
+        <label for="name-input">
+          <span>Full Name</span>
+          <input type="text" name="name-input" id="name-input" class="inputs-design">
+        </label>
+      </div>
+
+      <div class="input-for-email inputs-configs-design">
+        <label for="email-input">
+          <span>Email Adress</span>
+          <input type="email" name="email-input" id="email-input" class="inputs-design">
+        </label>
+      </div>
+
+      <div class="input-for-github inputs-configs-design">
+        <label for="github-input">
+          <span>GitHub Username</span>
+          <input type="text" name="github-input" id="github-input" class="inputs-design">
+        </label>
+      </div>
+
+      <div class="input-submit" >
+        <input type="submit" value="Generate My Ticket" class="inputs-configs-design input-submit-btn">
+      </div>
+    </form>
+
+  </div>
+
+  <!-- WORK ON THIS IN THE END OF THE PROJECT -->
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+
+  <script src="scripts/script.js"></script>
 </body>
+
 </html>
