@@ -42,40 +42,60 @@
               <img src="assets/images/icon-upload.svg" alt="Upload logo">
             </div>
             <div class="subtitle-upload-area">
+              <div class="upload-buttons-div">
+                <button class="uploaded-options">
+                  Remove Image
+                </button>
+                <button class="uploaded-options">
+                  Change Image
+                </button>
+              </div>
               <p class="subtitle-upload-content">Drag and drop or click to upload</p>
             </div>
           </div>
-          <input type="file" name="upload-input" id="upload-input" hidden>
+          <input type="file" name="upload-input" id="upload-input" hidden required>
         </label>
         <p class="type-files">
-          <img src="assets/images/icon-info.svg" alt="Info image">
-          Upload your photo (JPG or PNG, max size: 500KB)
+          <img src="assets/images/icon-info.svg" alt="Info image" class="info-logo">
+          <span class="caption-info">Upload your photo (JPG or PNG, max size: 500KB)</span>
         </p>
       </div>
 
       <div class="input-for-name inputs-configs-design">
         <label for="name-input">
           <span>Full Name</span>
-          <input type="text" name="name-input" id="name-input" class="inputs-design">
+          <input type="text" name="name-input" id="name-input" class="inputs-design" required>
         </label>
+        <p class="error-message name-error">
+          <img src="assets/images/errorImages/icon-info-erro.svg" alt="Info image" class="error-logo">
+          <span class="error-text name-advice">Name is a required information</span>
+        </p>
       </div>
 
       <div class="input-for-email inputs-configs-design">
         <label for="email-input">
           <span>Email Adress</span>
-          <input type="email" name="email-input" id="email-input" class="inputs-design" placeholder="example@email.com">
+          <input type="email" name="email-input" id="email-input" class="inputs-design" placeholder="example@email.com" required>
         </label>
+        <p class="error-message email-error">
+          <img src="assets/images/errorImages/icon-info-erro.svg" alt="Info image" class="error-logo">
+          <span class="error-text">Please enter a valid email adress</span>
+        </p>
       </div>
 
       <div class="input-for-github inputs-configs-design">
         <label for="github-input">
           <span>GitHub Username</span>
-          <input type="text" name="github-input" id="github-input" class="inputs-design" placeholder="@yourusername">
+          <input type="text" name="github-input" id="github-input" class="inputs-design" placeholder="@yourusername" required>
         </label>
+        <p class="error-message github-error">
+          <img src="assets/images/errorImages/icon-info-erro.svg" alt="Info image" class="error-logo">
+          <span class="error-text github-alert">Please enter a valid GiuHub profile</span>
+        </p>
       </div>
 
       <div class="input-submit">
-        <input type="submit" value="Generate My Ticket" class="inputs-configs-design input-submit-btn">
+        <input type="submit" value="Generate My Ticket" class="inputs-configs-design input-submit-btn" id="submit-btn">
       </div>
     </div>
   </form>
