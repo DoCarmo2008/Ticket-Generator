@@ -39,25 +39,29 @@
           <span>Upload Avatar</span>
           <div class="upload-area">
             <div class="svg-upload">
-              <img src="assets/images/icon-upload.svg" alt="Upload logo">
+              <img src="assets/images/icon-upload.svg" alt="Upload logo" class="upload-logo">
             </div>
             <div class="subtitle-upload-area">
               <div class="upload-buttons-div">
-                <button class="uploaded-options">
+                <button class="uploaded-options remove-img">
                   Remove Image
                 </button>
-                <button class="uploaded-options">
+                <button class="uploaded-options change-img">
                   Change Image
                 </button>
               </div>
               <p class="subtitle-upload-content">Drag and drop or click to upload</p>
             </div>
           </div>
-          <input type="file" name="upload-input" id="upload-input" hidden required>
+          <input type="file" name="upload-input" id="upload-input" hidden required  accept=".jpg, .png">
         </label>
         <p class="type-files">
           <img src="assets/images/icon-info.svg" alt="Info image" class="info-logo">
           <span class="caption-info">Upload your photo (JPG or PNG, max size: 500KB)</span>
+        </p>
+        <p class="error-message upload-erro">
+          <img src="assets/images/errorImages/icon-info-erro.svg" alt="Info image" class="error-logo">
+          <span class="error-text upload-advice">Invalid file type</span>
         </p>
       </div>
 

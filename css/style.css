@@ -215,7 +215,7 @@ body {
 
 .error-message {
     margin-top: 5px;
-    display: none;
+    display:none;
     flex-direction: row;
     align-items: center;
     gap: 10px;
@@ -226,6 +226,7 @@ body {
 
 .inputs-design:hover,
 .upload-area:hover {
+    transition: 0.5s;
     background-color: rgba(255, 255, 255, 0.178);
 }
 
@@ -251,6 +252,7 @@ body {
     color: var(--neutral300);
     border: none;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 
