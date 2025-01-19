@@ -72,8 +72,8 @@ body {
 
 .pattern-squiggly-bottom {
     position: absolute;
-    bottom: 0;
-    left: 0;
+    bottom: 0px;
+    left: -60px;
     z-index: -1;
 }
 
@@ -132,7 +132,7 @@ body {
 .formulary-organizer {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
     padding-top: 25px;
 }
 
@@ -149,7 +149,7 @@ body {
 }
 
 .inputs-configs-design label span {
-    font-size: 15px;
+    font-size: 20px;
     margin-bottom: 10px;
     font-family: var(--Inconsolata);
 }
@@ -225,7 +225,7 @@ body {
 
 
 .inputs-design:hover,
-.upload-area:hover {
+.upload-area:hover, .highlight-upload {
     transition: 0.5s;
     background-color: rgba(255, 255, 255, 0.178);
 }
@@ -255,6 +255,12 @@ body {
     cursor: pointer;
 }
 
+.img-uploaded {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+}
+
 
 /* SUBMIT */
 .input-submit-btn {
@@ -280,8 +286,8 @@ body {
     display: flex;
     align-items: start;
     justify-content: center;
-    margin-top: 6px;
-    font-size: 9px;
+    margin: 10px 0;
+    font-size: 12px;
     gap: 10px;
 }
 

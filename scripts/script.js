@@ -1,3 +1,4 @@
+
 /* Error Messages */
 const erroInvalidInfos = document.querySelector('.error-message'); //Englobe all erro message - for general use
 const uploadErro = document.querySelector('.upload-erro');
@@ -19,10 +20,9 @@ const fileInfo = document.querySelector('.type-files');
 /* Upload Changes*/
 const uploadedOptions = document.querySelector('.upload-buttons-div');
 const dragAndDropCaption = document.querySelector('.subtitle-upload-content');
-const uploadLogo = document.querySelector('.upload-logo');
+const previewImg = document.querySelector('.upload-logo');
 const removeImg = document.querySelector('.remove-img');
 const changeImg = document.querySelector('.change-img');
-
 
 
 /* Removing the alerts */
@@ -45,9 +45,9 @@ githubInput.addEventListener('click', () => {
 });
 
 
-/* UPLOAD VERIFICATOR */
-uploadInput.addEventListener("change", function () {
-    const file = this.files[0];
+/* UPLOAD  VERIFICATION */
+function selectingFile() {
+    const file = uploadInput.files[0];
     const maxSize = 500 * 1024;
 
     if (file) {
@@ -55,29 +55,95 @@ uploadInput.addEventListener("change", function () {
         if (!allowedTypes.includes(file.type)) {
             fileInfo.style.display = 'none';
             uploadErro.style.display = 'flex';
-            this.value = ""; //Reset the input
+            uploadInput.value = ""; //Reset the input
+            return;
         }
-    }
 
-    if (file && file.size > maxSize) {
-        fileInfo.style.display = 'none';
-        uploadErro.style.display = 'flex';
-        uploadAdvice.textContent = 'File too large. Please upload a photo under 500KB.';
-    } else {
+
+        if (file && file.size > maxSize) {
+            fileInfo.style.display = 'none';
+            uploadErro.style.display = 'flex';
+            uploadAdvice.textContent = 'File too large. Please upload a photo under 500KB.';
+            return;
+        }
+
+        // Change the upload logo to the selected image
+        previewImg.classList.add("img-uploaded");
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            previewImg.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
         uploadedOptions.style.display = 'flex';
         dragAndDropCaption.style.display = 'none';
+    } else {
+        previewImg.classList.remove("img-uploaded");
+        previewImg.src = "assets/images/icon-upload.svg";
+
     }
+};
 
-    /* TO DO: CHANGE THE UPLOAD LOGO TO THE FILE  */
 
+
+/* DRAG AND DROP FUNCTIONS */
+//Creating the events
+
+/* TO DO: FINISH DRAG AND DROP FUNCTIONALITY*/
+["dragenter", "dragover", "dragleave", "drop"].forEach(eventName => {
+    uploadInput.addEventListener(eventName, (e) => e.preventDefault());
 });
+
+// Highlight drop area on dragover
+uploadInput.addEventListener("dragover", () => {
+    dropArea.classList.add("highlight");
+});
+
+// Remove highlight on dragleave
+uploadInput.addEventListener("dragleave", () => {
+    dropArea.classList.remove("highlight");
+});
+
+// Handle file drop
+uploadInput.addEventListener("drop", (e) => {
+    const file = e.dataTransfer.files[0]; // Get the dropped file
+    handleFile(file); // Process the file
+});
+
+
+// Button functionalities after uploading a file
+changeImg.addEventListener("click", () => {
+    uploadInput.value = ""; // Clear previous selection
+    uploadInput.click(); // Open file selection
+});
+
+removeImg.addEventListener("click", () => {
+    uploadInput.value = "";
+    previewImg.classList.remove("img-uploaded");
+    previewImg.src = "assets/images/icon-upload.svg";
+    uploadedOptions.style.display = 'none';
+    dragAndDropCaption.style.display = 'flex';
+});
+
+
+
+/* UPLOAD  APLICATION */
+uploadInput.addEventListener("change", function () {
+    selectingFile();
+});
+
 
 /* Array of verification */
 const numberVerificator = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 
 //When the Submit button is clicked
 submitBtn.addEventListener('click', () => {
+    /* UPLOAD LAST VERIFICATION */
 
+    /* TO DO: FIX THIS - NOT WORKING PROPERLY */
+    if(previewImg.src == "assets/images/icon-upload.svg") {
+        uploadAdvice.textContent = 'A file must be uploaded';
+        selectingFile();
+    };
 
     /* INPUTS VERIFICATORS */
     if (nameInput.value.length === 0) {
