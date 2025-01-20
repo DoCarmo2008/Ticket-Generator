@@ -20,6 +20,7 @@ const fileInfo = document.querySelector('.type-files');
 /* Upload Changes*/
 const uploadedOptions = document.querySelector('.upload-buttons-div');
 const dragAndDropCaption = document.querySelector('.subtitle-upload-content');
+const uploadArea = document.querySelector('.upload-area')
 const previewImg = document.querySelector('.upload-logo');
 const removeImg = document.querySelector('.remove-img');
 const changeImg = document.querySelector('.change-img');
@@ -46,8 +47,12 @@ githubInput.addEventListener('click', () => {
 
 
 /* UPLOAD  VERIFICATION */
-function selectingFile() {
-    const file = uploadInput.files[0];
+function selectingFile(file) {
+
+    if(!file) {
+        file = uploadInput.files[0]; // If no file is passed, using input file
+    }
+
     const maxSize = 500 * 1024;
 
     if (file) {
@@ -57,6 +62,9 @@ function selectingFile() {
             uploadErro.style.display = 'flex';
             uploadInput.value = ""; //Reset the input
             return;
+        } else {
+            fileInfo.style.display = 'flex';
+            uploadErro.style.display = 'none';
         }
 
 
@@ -65,6 +73,9 @@ function selectingFile() {
             uploadErro.style.display = 'flex';
             uploadAdvice.textContent = 'File too large. Please upload a photo under 500KB.';
             return;
+        } else {
+            fileInfo.style.display = 'flex';
+            uploadErro.style.display = 'none';
         }
 
         // Change the upload logo to the selected image
@@ -84,30 +95,23 @@ function selectingFile() {
 };
 
 
-
 /* DRAG AND DROP FUNCTIONS */
 //Creating the events
-
-/* TO DO: FINISH DRAG AND DROP FUNCTIONALITY*/
 ["dragenter", "dragover", "dragleave", "drop"].forEach(eventName => {
-    uploadInput.addEventListener(eventName, (e) => e.preventDefault());
-});
-
-// Highlight drop area on dragover
-uploadInput.addEventListener("dragover", () => {
-    dropArea.classList.add("highlight");
-});
-
-// Remove highlight on dragleave
-uploadInput.addEventListener("dragleave", () => {
-    dropArea.classList.remove("highlight");
+    uploadArea.addEventListener(eventName, (e) => e.preventDefault());
 });
 
 // Handle file drop
-uploadInput.addEventListener("drop", (e) => {
+uploadArea.addEventListener("drop", (e) => {
     const file = e.dataTransfer.files[0]; // Get the dropped file
     handleFile(file); // Process the file
 });
+
+// Function to handle the file (read and preview)
+function handleFile(file) {
+    selectingFile(file);
+}
+
 
 
 // Button functionalities after uploading a file
@@ -140,7 +144,7 @@ submitBtn.addEventListener('click', () => {
     /* UPLOAD LAST VERIFICATION */
 
     /* TO DO: FIX THIS - NOT WORKING PROPERLY */
-    if(previewImg.src == "assets/images/icon-upload.svg") {
+    if (previewImg.src == "assets/images/icon-upload.svg") {
         uploadAdvice.textContent = 'A file must be uploaded';
         selectingFile();
     };
