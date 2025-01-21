@@ -49,7 +49,7 @@ githubInput.addEventListener('click', () => {
 /* UPLOAD  VERIFICATION */
 function selectingFile(file) {
 
-    if(!file) {
+    if (!file) {
         file = uploadInput.files[0]; // If no file is passed, using input file
     }
 
@@ -114,7 +114,7 @@ function handleFile(file) {
 
 
 
-// Button functionalities after uploading a file
+// BUTTONS WHICH APPEARS AFTER UPLOADING A FILE
 changeImg.addEventListener("click", () => {
     uploadInput.value = ""; // Clear previous selection
     uploadInput.click(); // Open file selection
@@ -129,8 +129,7 @@ removeImg.addEventListener("click", () => {
 });
 
 
-
-/* UPLOAD  APLICATION */
+/* UPLOAD CHANGING FILE*/
 uploadInput.addEventListener("change", function () {
     selectingFile();
 });
@@ -141,18 +140,12 @@ const numberVerificator = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 
 //When the Submit button is clicked
 submitBtn.addEventListener('click', () => {
-    /* UPLOAD LAST VERIFICATION */
-
-    /* TO DO: FIX THIS - NOT WORKING PROPERLY */
-    if (previewImg.src == "assets/images/icon-upload.svg") {
-        uploadAdvice.textContent = 'A file must be uploaded';
-        selectingFile();
-    };
 
     /* INPUTS VERIFICATORS */
     if (nameInput.value.length === 0) {
         nameErroAlert.style.display = 'flex';
         nameAlert.textContent = 'Name is a required information';
+        return;
     } else {
         for (let num of numberVerificator) {
             if (nameInput.value.includes(num)) {
@@ -165,18 +158,21 @@ submitBtn.addEventListener('click', () => {
 
     if (emailInput.value.length === 0) {
         emailErroAlert.style.display = 'flex';
+        return;
     }
 
     if (githubInput.value.length === 0) {
         githubErroAlert.style.display = 'flex';
         githubAlert.textContent = 'Please enter a valid GiuHub profile';
+        return;
     } else if (!githubInput.value.includes("@")) {
         githubErroAlert.style.display = 'flex';
         githubAlert.textContent = 'Please enter a valid GiuHub profile (missing "@" in the beginning)';
+        return;
     }
 
-
-    /* window.location.href = "./pages/ticketGenerated.html"; */
+    //If every informations is right, then...
+    window.location.href = "./pages/ticketGenerated.html";
 });
 
 

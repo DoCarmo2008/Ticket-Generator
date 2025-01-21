@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+    /* COLORS */
+    /* Neutrals type colors */
+    --neutral0: hsl(0, 0%, 100%);
+    --neutral300: hsl(252, 6%, 83%);
+    --neutral500: hsl(245, 15%, 58%);
+    --neutral700: hsl(245, 19%, 35%);
+    --neutral900: hsl(248, 70%, 10%);
+
+    /* Orange type colors */
+    --orange500: hsl(7, 88%, 67%);
+    --orange700: hsl(7, 71%, 10%);
+
+    /* Gradient (TEXT) */
+    --gradientorange: hsl(7, 86%, 67%);
+
+    /* FONT */
+    --Inconsolata: 'Inconsolata', monospace;
+}
+
+@font-face {
+    font-family: 'Inconsolata';
+    src: url("../assets/fonts/Inconsolata-VariableFont_wdth\,wght.ttf");
+    font-weight: 400 500 700 800;
+    font-style: normal;
+}
+
+
+body {
+    background-image: url("../assets/images/background-desktop.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    overflow-x: hidden;
+    font-family: var(--Inconsolata);
+    color: var(--neutral0);
+}
+
+/* HEADER */
+.centralizer-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+/*  LINES IN THE BACKGROUND */
+.pattern-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100vh;
+    opacity: 0.5;
+
+}
+
+.pattern-squiggly-top {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    z-index: -1;
+}
+
+.pattern-squiggly-bottom {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    z-index: -1;
+}
+
+
+/* ScrollBar Style */
+
+/* General Configs */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* The circle which scroll with the page */
+::-webkit-scrollbar-thumb {
+    background: var(--neutral700); 
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-track-piece {
+    background-color: var(--neutral900);
+  }
