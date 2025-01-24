@@ -60,7 +60,6 @@ body {
     z-index: -1;
     width: 100%;
     height: 100vh;
-    opacity: 0.5;
 
 }
 
@@ -88,10 +87,131 @@ body {
 
 /* The circle which scroll with the page */
 ::-webkit-scrollbar-thumb {
-    background: var(--neutral700); 
+    background: var(--neutral700);
     border-radius: 10px;
-  }
+}
 
-  ::-webkit-scrollbar-track-piece {
+::-webkit-scrollbar-track-piece {
     background-color: var(--neutral900);
-  }
+}
+
+
+/* CONTENT */
+
+/* MAIN TITLE */
+.congrats-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    padding-top: 30px;
+}
+
+.main-title {
+    font-size: 3.5rem;
+}
+
+.main-title span {
+    background-image: linear-gradient(to right,hsl(7, 86%, 67%), hsl(0, 0%, 100%) );
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.second-title {
+    font-size: 2.5rem;
+}
+
+/* EXPLANATION */
+.explanation-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+
+.explanation-content {
+    margin-top: 30px;
+}
+
+.explanation-ticket {
+    color: var(--neutral300);
+    font-family: var(--Inconsolata);
+    line-height: 1.3;
+    font-size: 11pt;
+}
+
+.explanation-ticket span {
+    color: var(--orange500);
+}
+
+
+/* TICKET GENERATED DESIGN */
+
+.ticket-full-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.ticket-design {
+    position: relative;
+}
+
+.ticket-informations{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+/* TICKET HEADER */
+.ticket-header {
+    display: flex;
+    flex-direction: column;
+}
+
+.ticket-title {
+    display: flex;
+    gap: 20px;
+}
+
+.ticket-title img, .user-image img {
+    border-radius: 10px;
+}
+
+.ticket-date {
+    padding-left: 60px;
+    color: var(--neutral500);
+}
+
+/* TICKET BOTTOM */
+.user-informations {
+    display: flex;
+    gap: 20px;
+}
+
+.user-github {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.user-image img{
+    height: 50px;
+    width: 50px;
+
+}
+
+
+
+
+

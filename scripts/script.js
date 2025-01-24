@@ -139,8 +139,9 @@ uploadInput.addEventListener("change", function () {
 const numberVerificator = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 
 //When the Submit button is clicked
-submitBtn.addEventListener('click', () => {
+submitBtn.addEventListener('click', (event) => {
 
+    event.preventDefault();
     /* INPUTS VERIFICATORS */
     if (nameInput.value.length === 0) {
         nameErroAlert.style.display = 'flex';
@@ -171,7 +172,22 @@ submitBtn.addEventListener('click', () => {
         return;
     }
 
+
     //If every informations is right, then...
+
+    //LocalStorage for storing the datas
+    const nameValue = nameInput.value;
+    const emailValue = emailInput.value;
+    const githubValue = githubInput.value;
+    const imageValue = previewImg;
+
+    localStorage.setItem("name", nameValue);
+    localStorage.setItem("email", emailValue);
+    localStorage.setItem("github", githubValue);
+    localStorage.setItem("previewImg", imageValue);
+
+
+    //Routing to another page
     window.location.href = "./pages/ticketGenerated.html";
 });
 
