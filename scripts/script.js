@@ -135,8 +135,11 @@ uploadInput.addEventListener("change", function () {
 });
 
 
-/* Array of verification */
+/* Verifications */
 const numberVerificator = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const emailInformedVerified = emailPattern.test(emailInput.value);
+const githubPattern = /^@[a-zA-Z0-9-]+$/;
 
 //When the Submit button is clicked
 submitBtn.addEventListener('click', (event) => {
@@ -152,7 +155,7 @@ submitBtn.addEventListener('click', (event) => {
             if (nameInput.value.includes(num)) {
                 nameErroAlert.style.display = 'flex';
                 nameAlert.textContent = 'Name can not contain numbers';
-                break;
+                return;
             }
         }
     }
@@ -160,13 +163,18 @@ submitBtn.addEventListener('click', (event) => {
     if (emailInput.value.length === 0) {
         emailErroAlert.style.display = 'flex';
         return;
+    } else {
+        if (!emailInput.value.match(emailPattern)) {
+            emailErroAlert.style.display = 'flex';
+            return;
+        }
     }
 
     if (githubInput.value.length === 0) {
         githubErroAlert.style.display = 'flex';
         githubAlert.textContent = 'Please enter a valid GiuHub profile';
         return;
-    } else if (!githubInput.value.includes("@")) {
+    } else if (!githubInput.value.match(githubPattern)) {
         githubErroAlert.style.display = 'flex';
         githubAlert.textContent = 'Please enter a valid GiuHub profile (missing "@" in the beginning)';
         return;

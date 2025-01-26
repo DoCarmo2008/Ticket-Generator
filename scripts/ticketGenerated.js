@@ -11,10 +11,20 @@ const ticketName = document.querySelector('.user-name');
 const ticketGitHub = document.querySelector('.github-id');
 const ticketDate = document.querySelector('.today-date')
 const ticketPfp = document.querySelector('.user-picture');
+let ticketNumber = document.querySelector('.ticket-number');
+
+//Random numbers for the ticket numbers
+let listNumber = [];
+for(let i = 0; i < 5; i++) {
+    listNumber.push(Math.floor(Math.random() * 10));
+}
+
+const ticketRandomNumber = listNumber.join("");
+
 
 //Taking the date of the day
 const date = new Date();
-const day = date.getDate();
+const day = date.getDate(); 
 const month = date.getMonth() + 1;
 const year = date.getFullYear();
 
@@ -63,6 +73,8 @@ switch (month) {
 }
 
 //Changing the datas of the ticket
+ticketPfp.src = `${userImg}`;
 ticketName.textContent = `${userName}`;
 ticketDate.textContent = `${dateName} ${day}, ${year}`;
 ticketGitHub.textContent = `${userGithub}`;
+ticketNumber.textContent = `#${ticketRandomNumber}`;
