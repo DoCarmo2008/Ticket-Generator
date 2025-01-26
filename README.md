@@ -31,6 +31,43 @@ Users should be able to:
 - CSS Grid
 - Javascript
 
+### What I learned
+I'm proud of being able to study and apply concepts that I didn't know before.
+Summarizing, I was capable of understanding how to code an intermediary formulary in *HTML*, verifiy given datas in *JavaScript* and style it following the desing with *CSS* properties.
+
+For instance in the code:
+```html
+<label for="email-input">
+          <span>Email Adress</span>
+          <input type="email" name="email-input" id="email-input" class="inputs-design" placeholder="example@email.com" required>
+</label>
+```
+```css
+:root {
+    --neutral0: hsl(0, 0%, 100%);
+    --neutral300: hsl(252, 6%, 83%);
+    --neutral500: hsl(245, 15%, 58%);
+    --neutral700: hsl(245, 19%, 35%);
+    --neutral900: hsl(248, 70%, 10%);
+    --orange500: hsl(7, 88%, 67%);
+    --orange700: hsl(7, 71%, 10%);
+    --gradientorange: hsl(7, 86%, 67%);
+    --Inconsolata: 'Inconsolata', monospace;
+}
+```
+```js
+uploadArea.addEventListener("drop", (e) => {
+    const file = e.dataTransfer.files[0]; // Get the dropped file
+    handleFile(file); // Process the file
+});
+```
+
+### Useful resources
+
+- [ChatGPT](https://chatgpt.com/) - This AI tool helped me on the 
+comprehension of some piece of code and how it works. I really liked this pattern and will use it going forward.
+- [W3School](https://www.w3schools.com/) - This is an amazing website of learning articles which taugh me with examples how some built-in functions behave. I'd recommend it to anyone who is still learning.
+
 ## Author
 
 - Website - [Gabriel do Carmo](https://docarmo.pages.dev/)
