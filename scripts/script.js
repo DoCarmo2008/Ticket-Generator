@@ -179,7 +179,7 @@ submitBtn.addEventListener('click', (event) => {
     const nameValue = nameInput.value;
     const emailValue = emailInput.value;
     const githubValue = githubInput.value;
-    const imageValue = previewImg;
+    const imageValue = previewImg.src;
 
     localStorage.setItem("name", nameValue);
     localStorage.setItem("email", emailValue);
